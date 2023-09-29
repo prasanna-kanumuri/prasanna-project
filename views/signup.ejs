@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+<style>
+ .signup-box {
+   background-color: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) -5px 5px, rgba(0, 0, 0, 0.3) -10px 10px, rgba(0, 0, 0, 0.2) -15px 15px, rgba(0, 0, 0, 0.1) -20px 20px, rgba(0, 0, 0, 0.05) -25px 25px;
+  padding: 10px;
+  text-align: center;
+  width: 600px;
+  background: linear-gradient(to top, rgba(131, 72, 135, 0.782), #67b880,rgb(181, 160, 120));
+
+
+
+
+
+
+
+  
+     
+     }
+     body, h1, h4, label, input, button, .para-1, .para-2, a {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            background: linear-gradient(to right, #8e9eab, #eef2f3);
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+
+        h4 {
+            font-size: 16px;
+            color:rgb(110, 107, 101);
+            margin-bottom: 20px;
+        }
+
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: darkgreen;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+
+        p {
+            font-size: 14px;
+            color: black;
+            
+        }
+        .para-1{
+            background-color: #ffffffa2;
+            padding: 5px;
+            max-width: 350px;
+            border-radius: 50px;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        
+                input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+</style>
+
+</head>
+
+<body>
+    <center>
+    <form action="signupsubmit" method="get">
+    <div class="signup-box">
+        <h1>Sign Up</h1>
+        <h4 style="color:rgba(179, 88, 184, 0.782)">to explore and to <span style="color: red;">IDENTIFY NUMBERS</span> world</h4>
+        <form>
+            <label>First Name</label><input type="text" name="first_name" placeholder="First Name" /><br><br>
+            <label>Last Name</label>
+            <input type="text" name="last_name" placeholder="Last Name" /><br><br>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" /><br><br>
+            <label>Password</label>
+            <input type="password" placeholder="Type Password" /><br><br>
+            <label>Confirm Password</label>
+            <input type="password" name = "password" placeholder="Confirm Password" /><br><br>
+
+
+        <center><p class="para-1">
+            By clicking the Sign Up button,you agree to our <br />
+            <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+        </p>    </center><br><br>
+            <center><button>Sign Up</button></center><br>
+
+            <p class="para-2">
+                Already have an account? <a href="login.ejs">Login here</a>
+            
+            </p>
+        </div>
+       
+
+    </form>
+    </center>
+</body>
+
+</html>
+

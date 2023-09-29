@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+
+        body, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+
+        marquee {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: blue;
+        }
+
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(131, 72, 135, 0.782), #67b880,rgb(181, 160, 120));
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+
+        .search-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #inp-number {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+
+        #search-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #search-btn:hover {
+            background-color: #0056b3; 
+        }
+
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+      
+        .error {
+            text-align: center;
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <br>
+    <center><h2>"TRACE YOOUR NUMBER"</h2></center>
+    <audio id="sound"></audio>
+    <marquee color="blue">Validate a Number.. </marquee>
+    <br>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" placeholder="Type the phone number here.." id="inp-number" />
+            <button id="search-btn">Validate</button>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const apiKey = "BhkcswuuRPpFvWxGUdMZooajwWFh4mUG";
+        const apiUrl = "https://api.apilayer.com/number_verification/validate";
+
+        const result = document.getElementById("result");
+        const sound = document.getElementById("sound");
+        const btn = document.getElementById("search-btn");
+
+        btn.addEventListener("click", () => {
+            let inpNumber = document.getElementById("inp-number").value;
+
+            fetch(`${apiUrl}?number=${inpNumber}&apikey=${apiKey}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    if (data.valid) {
+                        result.innerHTML = `<h3>Number is valid</h3>`;
+                        
+                    } else {
+                        result.innerHTML = `<h3 class="error">Number is not valid</h3>`;
+                    }
+                })
+                .catch(() => {
+                    result.innerHTML = `<h3 class="error">Error validating the number</h3>`;
+                });
+        });
+
+        function playSound() {
+            sound.play();
+        }
+    </script>
+</body>
+</html>

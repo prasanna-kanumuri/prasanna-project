@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+
+
+        body {
+            background: linear-gradient(to top, rgba(131, 72, 135, 0.782), #67b880,rgb(181, 160, 120));
+
+        }
+
+        .background {
+            width: 890px;
+            height: 520px;
+            position: absolute;
+            
+        }
+
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+
+        form {
+            height: 520px;
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 20px;
+        }
+
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #db52bd;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        form h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        ::placeholder {
+            color: #e5e5e5;
+        }
+
+        button {
+            margin-top: 50px;
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+
+        /* Additional styles for your login box */
+        .login-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        
+            background: linear-gradient(to top, rgba(131, 72, 135, 0.782), #67b880,rgb(181, 160, 120));
+
+            
+        }
+
+        .child {
+            text-align: center;
+        }
+
+        .para-1 {
+            color: #ffffff;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <div class="child">
+            <h1>Login</h1>
+            <form action="#">
+                <fieldset>
+                    <legend>
+                        <span style="color: #007bff">Login Credentials</span>
+                    </legend>
+                    <label>UserEmail: <input type="email" name="email" placeholder="User Mail" /></label><br /><br />
+                    <label>Password: <input type="password" name="password" placeholder="Password" /></label><br /><br />
+                    <center><button>Submit</button></center>
+                </fieldset>
+            </form>
+            <p class="para-1">Not have an account? <a href="signup.ejs">Sign Up Here</a></p>
+        </div>
+    </div>
+</body>
+</html>
